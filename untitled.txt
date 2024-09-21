@@ -1,0 +1,18 @@
+// function storeSelectedValue(){
+        //     const questionoptions = document.getElementsByName('q1');
+
+        //     let selectedoption = '';
+        //     for ( const options of questionoptions){
+        //         if (options.checked){
+        //             selectedoption = options.value;
+        //             break;
+        //         }
+        //     }
+        // }
+
+        // if (selectedoption){
+        //     localStorage.setItem('answerq1', selectedoption);
+        //     alert("Stored selected option: ", selectedoption);
+        // } else{
+        //     alert("Please select an option!")
+        // }

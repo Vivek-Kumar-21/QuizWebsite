@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizApp</title>   
+</head>
+<body>
+    <h1>Quiz App</h1>
+
+    <form name="myForm" id="quizForm">
+        <div>
+            <h3>Q1. What is the national bird of India?</h3>
+            <input type="radio" name="q1" value="Eagle"> Eagle<br>
+            <input type="radio" name="q1" value="Sparrow"> Sparrow<br>
+            <input type="radio" name="q1" value="Peacock"> Peacock<br>
+            <input type="radio" name="q1" value="Pigeon"> Pigeon<br>
+        </div>
+
+        <div>
+            <h3>Q2. What is the national flower of India?</h3>
+            <input type="radio" name="q2" value="Lotus"> Lotus<br>
+            <input type="radio" name="q2" value="Jasmine"> Jasmine<br>
+            <input type="radio" name="q2" value="Sunflower"> Sunflower<br>
+            <input type="radio" name="q2" value="Rose"> Rose<br>
+        </div>
+        <div>
+            <h3>Q3. When did India gain Independence?</h3>
+            <input type="radio" name="q3" value="1967"> 1967<br>
+            <input type="radio" name="q3" value="1932"> 1932<br>
+            <input type="radio" name="q3" value="1947"> 1947<br>
+            <input type="radio" name="q3" value="1969"> 1969<br>
+        </div>
+        <div>
+            <h3>Q4. What is the Flag of India?</h3>
+            <input type="radio" name="q4" value="saffron"> Saffron<br>
+            <input type="radio" name="q4" value="white"> White<br>
+            <input type="radio" name="q4" value="yellow"> Yellow<br>
+            <input type="radio" name="q4" value="Tricolor"> Tricolor<br>
+        </div>
+        <div>
+            <h3>Q5. What is the national capital of India?</h3>
+            <input type="radio" name="q5" value="gandhinagar"> Gandhi Ngar<br>
+            <input type="radio" name="q5" value="Delhi"> Delhi<br>
+            <input type="radio" name="q5" value="Mumbai"> Mumbai<br>
+            <input type="radio" name="q5" value="Patna"> Patna<br>
+        </div>
+
+        <br>
+        <button type="button" onclick="SubmitQuiz()" fdprocessedid="zgfbg9">Submit Quiz</button>
+    </form>
+
+    <script>
+        function SubmitQuiz() {
+
+            const CorrectAns = {
+                q1: "Peacock",
+                q2: "Lotus",
+                q3: "1947",
+                q4: "Tricolor",
+                q5: "Delhi"
+            };
+
+            let score = 0;
+            const form = document.forms['myForm'];
+            console.log(form);
+            
+
+            for (let question in CorrectAns) {
+                const SelectedValue = form[question].value;
+                console.log(SelectedValue);
+                 
+                
+                if (SelectedValue) {
+                    
+                    localStorage.setItem(question, SelectedValue);
+
+                    if (SelectedValue === CorrectAns[question]) {
+                        score++;
+                    }
+                }
+            }
+
+            alert("Your score is: " + score + " out of 5");
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<div id="volume-booster-visusalizer">
+                <div class="sound">
+                    <div class="sound-icon"></div>
+                    <div class="sound-wave sound-wave_one"></div>
+                    <div class="sound-wave sound-wave_two"></div>
+                    <div class="sound-wave sound-wave_three"></div>
+                </div>
+                <div class="segments-box">
+                    <div data-range="1-20" class="segment"><span></span></div>
+                    <div data-range="21-40" class="segment"><span></span></div>
+                    <div data-range="41-60" class="segment"><span></span></div>
+                    <div data-range="61-80" class="segment"><span></span></div>
+                    <div data-range="81-100" class="segment"><span></span></div>
+                </div>
+            </div><audio class="audio-output" style="display: none;"></audio><div id="volume-booster-visusalizer">
+                    <div class="sound">
+                        <div class="sound-icon"></div>
+                        <div class="sound-wave sound-wave_one"></div>
+                        <div class="sound-wave sound-wave_two"></div>
+                        <div class="sound-wave sound-wave_three"></div>
+                    </div>
+                    <div class="segments-box">
+                        <div data-range="1-20" class="segment"><span></span></div>
+                        <div data-range="21-40" class="segment"><span></span></div>
+                        <div data-range="41-60" class="segment"><span></span></div>
+                        <div data-range="61-80" class="segment"><span></span></div>
+                        <div data-range="81-100" class="segment"><span></span></div>
+                    </div>
+                </div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
